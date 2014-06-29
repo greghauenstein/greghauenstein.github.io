@@ -1,0 +1,535 @@
+/*
+ *	Define your subpage here:
+ *	If you use mod_rewrite for SEO, feel free to change
+ *	"subpage" to "yourseoname". Don't forget to also
+ * 	change it in Line 66 (important!).
+ */
+@charset "UTF-8";
+
+/*
+ *	Loads Google Web Fonts "Open Sans". Feel free to change it
+ * 	to any font you like. Therefo, go to line: 76
+ */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd,
+q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary, time,
+mark, audio, video {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+	border: 0;
+}
+
+html {
+    line-height: 1;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none;
+}
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section, summary {
+    display: block;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    color: #343434;
+   	font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+	font-weight: 300;
+    line-height: 22px;
+    *font-size: small;
+    -webkit-font-smoothing: antialiased;
+    overflow-y: hidden;
+}
+
+.noscroll .dummy {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+main {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+a {
+    color: #005aff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #005aff;
+}
+
+a:active {
+    color: #005aff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #aa3822;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5 {
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: normal;
+    margin-bottom: 1em;
+    line-height: 1.125em;
+}
+
+.teaser h2 {
+    font-size: 2.8em;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+.headline-medium {
+    font-size: 1.5em;
+}
+
+.headline-small {
+    font-size: 1em;
+}
+
+.button {
+    display: block;
+    border: 2px solid #333;
+		font-weight: 700;
+    color: #404040;
+    text-align: center;
+}
+
+.button:hover {
+    text-decoration: none;
+    color: #005aff;
+    border-color: #005aff;
+}
+
+.mi {
+    padding: .5em 2em;
+    text-transform: uppercase;
+    font-size: .85em;
+    letter-spacing: 1px
+}
+
+.background {
+    background-color: #343434;
+    background: url("../img/bg.jpg");
+    background-size: 100% auto;
+    background-position-x: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.background .logo {
+    position: relative;
+    width: 18em;
+    margin: 5.1em auto;
+}
+
+.background .logo img {
+    width: 100%;
+    height: auto;
+}
+
+.content-area {
+    width: 61%;
+    padding: 4em 14em 2em 7em;
+    background-color: #fff;
+    float: right;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.content-area .transition {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    transform: scale(1, 1);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-transition: .5s -webkit-transform, .5s opacity;
+    -moz-transition: .5s -moz-transform, .5s opacity;
+    transition: .5s transform, .5s opacity;
+}
+
+.content-area .transition-transformed {
+    -webkit-transform: scale(0.97, 0.97);
+    -moz-transform: scale(0.97, 0.97);
+    transform: scale(0.97, 0.97);
+    opacity: .8;
+}
+
+.content-area article {
+    max-width: 40em;
+    margin: 0 0 4em;
+    padding: 0 0 4em;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.content-area article:last-child {
+    border-bottom: none;
+}
+
+.content-area article .headline-small {
+    color: #005aff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.content-area .teaser .mi {
+    width: 20em;
+    margin-top: 3em;
+    color: #404040;
+}
+
+.content-area .teaser .mi:hover {
+    color: #005aff;
+}
+
+.content-area .work img {
+    width: 30%;
+    margin: 0 1.5%;
+    display: inline-block;
+}
+
+.content-area .work img:nth-of-type(3) {
+    margin-right: 0;
+}
+
+.content-area .work img:nth-of-type(3n-2) {
+    margin-left: 0;
+}
+
+.content-area .about .headline-small {
+    margin-bottom: 3em;
+}
+
+.content-area .about .employee {
+	min-height: 100px;
+	clear: both;
+}
+
+.content-area .about .employee img {
+	float: left;
+  margin-right: 1em;
+	margin-top: 0.5em;
+	width: 80px;
+  height: 80px; 
+}
+
+.content-area .about p:last-child {
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
+.content-area .about .twitter {
+    display: inline-block;
+    margin: 5px 0 0;
+    padding-left: 22px;
+    height: 24px;
+    background: url(../img/twitter.png) left center no-repeat
+}
+
+.content-area .location .headline-medium {
+    margin: 1em 0 .5em
+}
+
+.content-area .location #location-map {
+    display: inline-block;
+    width: 100%;
+    height: 20em;
+	margin-top: 1.15em;
+}
+
+.content-area .location .mi {
+    margin: 1em 0 2em;
+}
+
+.contact .half {
+    display: inline-block;
+    width: 47%;
+}
+
+.contact .half p {
+    margin: 1em 0;
+}
+
+.contact .half+.half {
+    margin-left: 3%;
+}
+
+.hidden-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 56em;
+    background-color: #fff;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    -webkit-box-shadow: -3px 0 10px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: -3px 0 10px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: -3px 0 10px 0 rgba(0, 0, 0, 0.05);
+    -webkit-transition: .4s -webkit-transform ease-in-out;
+    -moz-transition: .4s -moz-transform ease-in-out;
+    transition: .4s transform ease-in-out;
+    -webkit-transform: translateX(56em);
+    -moz-transform: translateX(56em);
+    transform: translateX(56em);
+}
+
+.hidden-content article {
+    padding: 4em 14em 8em 7em;
+}
+
+.hidden-content article p {
+	margin-bottom: 0.75em;
+}
+
+.hidden-content .headline-medium {
+    font-size: 1.25em;
+    line-height: 1.35em;
+    margin-top: 0.5em;
+}
+
+.hidden-content .headline-small {
+    color: #005aff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-top: 4em
+}
+
+.hidden-content .mi {
+    width: 20em;
+    margin-top: 6em;
+}
+
+.hidden-content b {
+    font-weight: 500;
+}
+
+.hidden-content-shown {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-overflow-scrolling: touch;
+}
+
+@media only screen and (max-width: 1300px) {
+    .content-area {
+        width: 48em;
+        padding: 4em 8em 2em 4em;
+    }
+
+    .content-area article {
+        margin: 0 auto 4em;
+    }
+
+    .hidden-content {
+        width: 48em;
+    }
+
+    .hidden-content article {
+        padding-left: 4em;
+        padding-right: 8em;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .logo img {
+        margin-left: -10px;
+    }
+
+    .content-area {
+        width: 40em;
+        padding: 4em 4em 4em 3em;
+    }
+
+    .content-area article {
+        margin: 0 auto 4em;
+        font-size: .9em;
+    }
+
+    .hidden-content {
+        width: 40em;
+    }
+
+    .hidden-content article {
+        padding-left: 3em;
+        padding-right: 4em;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .background {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .background .logo {
+        margin-top: 3em;
+        width: 12em;
+    }
+
+    .background .logo img {
+		margin-left: 25%;
+		max-height: 80px;
+		width: auto;
+    }
+
+    .content-area {
+        float: none;
+        position: absolute;
+        top: 10em;
+        width: 100%;
+        padding: 3em;
+        padding-bottom: 0;
+    }
+
+    .content-area .about div {
+        overflow: hidden;
+    }
+
+    .hidden-content {
+        font-size: .9em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        overflow: auto;
+    }
+
+    .content-area .work img {
+        width: 47.5%;
+    }
+
+    .content-area .work img:nth-of-type(2n) {
+        margin-right: 0;
+    }
+
+    .content-area .work img:nth-of-type(2n-1) {
+        margin-left: 0;
+    }
+
+    .content-area .about .matt {
+        margin-bottom: 2em;
+    }
+
+    .content-area .location .half {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+    .content-area .location .half+.half {
+        margin-left: 0;
+    }
+
+    .content-area .contact .half {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 4em;
+    }
+
+    .content-area .contact .half+.half {
+        margin-left: 0;
+    }
+
+    .hidden-content {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .background {
+        position: fixed;
+        top: 0;
+    }
+
+    main {
+        position: static;
+        height: auto;
+        overflow: visible;
+    }
+
+    .content-area {
+        padding: 1.5em;
+    }
+
+    .content-area .hl {
+        font-size: 1.75em;
+    }
+
+    .content-area .work img {
+        width: 50%;
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .content-area .work img:nth-of-type(n) {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
